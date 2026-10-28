@@ -25,7 +25,8 @@ jobs:
           node-version: 20
           cache: npm
           
-      - run: npm ci
+      # Diubah dari npm ci ke npm install agar aman walau package-lock.json tidak ada di git
+      - run: npm install
       
       - name: Build static site
         run: npm run build:static
